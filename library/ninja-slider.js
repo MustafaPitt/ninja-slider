@@ -173,5 +173,4 @@
       $.extend(new $.Ninja(input, options), new $.Ninja.Slider(input, options));
     }
   };
-
 }(jQuery));
