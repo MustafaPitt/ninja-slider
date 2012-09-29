@@ -141,6 +141,10 @@
 
   $.Ninja.Slider.prototype.change = function () {
     this.$input.val(this.list[this.index]).change();
+
+    if ('select' in this) {
+      this.select();
+    }
   };
 
   $.Ninja.Slider.prototype.left = function () {
