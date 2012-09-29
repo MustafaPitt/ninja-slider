@@ -140,7 +140,7 @@
   };
 
   $.Ninja.Slider.prototype.change = function () {
-    this.$input.val(this.list[this.index]);
+    this.$input.val(this.list[this.index]).change();
   };
 
   $.Ninja.Slider.prototype.left = function () {
