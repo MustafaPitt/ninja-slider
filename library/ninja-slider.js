@@ -55,10 +55,9 @@
     });
 
     slider.$groove = $('<div class="ninja-groove">').on('click.ninja', function (event) {
-      slider.$button.trigger({
-        type: 'select.ninja',
-        sliderX: Math.round((event.pageX - slider.$track.offset().left) / slider.increment)
-      });
+      slider.move(Math.round((event.pageX - slider.$track.offset().left) / slider.increment));
+
+      slider.change();
     }).append(slider.$level);
 
     slider.$value = $('<span>', {
