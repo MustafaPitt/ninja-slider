@@ -19,6 +19,10 @@
         slider.list = options.list;
 
         slider.slots = slider.list.length - 1;
+
+        if (slider.slots === 0) {
+          $.ninja.error('Slider list must include at least two elements.');
+        }
       } else {
         $.ninja.error('Slider must include a list option.');
       }

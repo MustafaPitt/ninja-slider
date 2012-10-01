@@ -131,6 +131,28 @@
     });
   });
 
+  module('binary', {
+    setup: function () {
+      this.$element = $('#qunit-fixture').find('input.test-binary');
+
+      this.$element.ninja('slider', {
+        list: [
+          'off',
+          'on'
+        ]
+      });
+    }
+  });
+
+  QUnit.done(function () {
+    $('#qunit-examples').find('input.test-binary').ninja('slider', {
+      list: [
+        'off',
+        'on'
+      ]
+    });
+  });
+
   test('has wrapper', function () {
     var $wrapper = this.$element.parent();
 
