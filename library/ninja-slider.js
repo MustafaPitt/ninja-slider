@@ -70,7 +70,7 @@
     });
 
     slider.$button = $('<button>', {
-      'class': 'ninja-button',
+      type: 'button',
       css: {
         left: slider.left()
       }
