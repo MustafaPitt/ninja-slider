@@ -2,6 +2,12 @@
   display: inline-block;
   font-weight: bold;
   min-width: 100px;
+  &.ninja-active * {
+    cursor: pointer;
+    cursor:-moz-grabbing;
+    cursor:-webkit-grabbing;
+    cursor: grabbing;
+  }
   button,
   .ninja-groove,
   .ninja-level {
@@ -13,7 +19,6 @@
   }
   button,
   .ninja-groove {
-    cursor: pointer;
     left: 0;
     position: absolute;
     top: 0;
@@ -27,6 +32,10 @@
     border: none;
     border-radius: 8px;
     box-shadow: 0 1px 3px #000;
+    cursor: pointer;
+    cursor:-moz-grab;
+    cursor:-webkit-grab;
+    cursor: grab;
     margin: 0;
     padding: 0;
     width: 16px;
@@ -45,6 +54,7 @@
   }
   .ninja-groove {
     background-color: #999;
+    cursor: pointer;
     left: 8px;
     right: 8px;
     top: 6px;

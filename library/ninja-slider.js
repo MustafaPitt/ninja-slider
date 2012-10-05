@@ -89,6 +89,8 @@
         }
       },
       'mousedown.ninja': function (event) {
+        slider.$wrapper.addClass('ninja-active');
+
         slider.offsetX = event.pageX - Math.round(slider.$button.position().left);
 
         $(document).on({
@@ -98,12 +100,14 @@
           'mouseup.ninja': function () {
             slider.change();
 
+            slider.$wrapper.removeClass('ninja-active');
+
             $(document).off('mousemove.ninja mouseup.ninja');
           }
         });
       },
       'touchstart.ninja': function (event) {
-        slider.$button.addClass('ninja-active');
+        slider.$wrapper.addClass('ninja-active');
 
         slider.touch = event.originalEvent.targetTouches[0] || event.originalEvent.changedTouches[0];
 
@@ -119,7 +123,7 @@
       'touchend.ninja': function (event) {
         event.preventDefault();
 
-        slider.$button.removeClass('ninja-active');
+        slider.$wrapper.removeClass('ninja-active');
 
         slider.change();
       }
@@ -144,10 +148,14 @@
   };
 
   $.Ninja.Slider.prototype.change = function () {
-    this.$input.val(this.list[this.index]).change();
+    var value = this.list[this.index];
 
-    if ('select' in this) {
-      this.select();
+    if (this.$input.val() !== value) {
+      this.$input.val(value).change();
+
+      if ('select' in this) {
+        this.select();
+      }
     }
   };
 
